@@ -18,7 +18,7 @@ fi
 BINUTILS=binutils-2.23.1    # 2.18
 GCC=gcc-4.7.2               # 4.2.2
 NEWLIB=newlib-2.0.0         # 1.16.0
-GDB=gdb-7.5.1                 # 6.8
+GDB=gdb-7.5.1               # 6.8
 
 # Advanced options
 PARALLEL=""                 # PARALLEL = "-j 5" for 4 CPU's

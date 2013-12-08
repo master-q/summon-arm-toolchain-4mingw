@@ -6,7 +6,15 @@ Copy and modify http://www.microbuilder.eu/Tutorials/SoftwareDevelopment/Buildin
 ## Install
 
 Install MinGW and MSYS on C:\MinGW.
-Detail at http://www.microbuilder.eu/Tutorials/SoftwareDevelopment/BuildingGCCToolchain.aspx.
+Run MinGW Installation Manager, and install following packages.
+
+* mingw32-base
+* mingw32-gcc-g++
+* mingw32-gmp (dev)
+* mingw32-mpc (dev)
+* mingw32-mpfr (dev)
+* msys-base
+* msys-wget (bin)
 
 Open msys console, and mount mingw dir.
 
