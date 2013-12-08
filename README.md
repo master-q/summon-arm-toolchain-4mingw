@@ -27,3 +27,7 @@ Run following command.
 ## Usage
 
 xxx
+
+## Bug
+
+* Can't install newlib
