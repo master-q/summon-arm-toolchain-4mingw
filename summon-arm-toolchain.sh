@@ -15,15 +15,15 @@ if [ $# -ne 2 ]; then
 fi
 
 # Version configuration
-BINUTILS=binutils-2.20.1    # 2.18
-GCC=gcc-4.5.0               # 4.2.2
-NEWLIB=newlib-1.18.0        # 1.16.0
-GDB=gdb-7.1                 # 6.8
+BINUTILS=binutils-2.23.1    # 2.18
+GCC=gcc-4.7.2               # 4.2.2
+NEWLIB=newlib-2.0.0         # 1.16.0
+GDB=gdb-7.5.1                 # 6.8
 
 # Advanced options
 PARALLEL=""                 # PARALLEL = "-j 5" for 4 CPU's
 DARWIN_OPT_PATH=/opt/local  # Path in which MacPorts or Fink is installed
-MINGW_PATH=/c/MinGW           # Path in which MacPorts or Fink is installed
+MINGW_PATH=/mingw           # Path in which MacPorts or Fink is installed
 
 # Command-line parameters
 TARGET=$2                   # TARGET = arm-elf | arm-none-eabi
@@ -93,7 +93,6 @@ if [ ! -e .${BINUTILS}.build ]; then
   echo "******************************************************************"
   ../${BINUTILS}/configure --target=${TARGET} \
                            --prefix=${PREFIX} \
-                           --oldincludedir=${MINGW_PATH}/include \
                            --enable-interwork \
                            --enable-multilib \
                            --with-gnu-as \
@@ -127,7 +126,6 @@ if [ ! -e .${GCC}-boot.build ]; then
   echo "******************************************************************"
   ../${GCC}/configure --target=${TARGET} \
                       --prefix=${PREFIX} \
-                      --oldincludedir=${MINGW_PATH}/include \
                       --enable-interwork \
                       --enable-multilib \
                       --enable-languages="c,c++,objc" \
@@ -165,7 +163,6 @@ if [ ! -e .${NEWLIB}.build ]; then
   echo "******************************************************************"
   ../${NEWLIB}/configure --target=${TARGET} \
                          --prefix=${PREFIX} \
-                         --oldincludedir=${MINGW_PATH}/include \
                          --enable-interwork \
                          --enable-multilib \
                          --with-gnu-as \
@@ -206,7 +203,6 @@ if [ ! -e .${GCC}.build ]; then
   echo "******************************************************************"
   ../${GCC}/configure --target=${TARGET} \
                       --prefix=${PREFIX} \
-                      --oldincludedir=${MINGW_PATH}/include \
                       --enable-interwork \
                       --enable-multilib \
                       --enable-languages="c,c++,objc" \
@@ -243,7 +239,6 @@ if [ ! -e .${GDB}.build ]; then
   echo "******************************************************************"
   ../${GDB}/configure --target=${TARGET} \
                       --prefix=${PREFIX} \
-                      --oldincludedir=${MINGW_PATH}/include \
                       --enable-interwork \
                       --enable-multilib \
                       ${GDBFLAGS} || exit
