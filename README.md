@@ -31,3 +31,8 @@ xxx
 ## Bug
 
 * Can't install newlib
+
+Should use these?
+
+https://launchpad.net/gcc-arm-embedded/
+https://github.com/adamgreen/gcc4mbed
